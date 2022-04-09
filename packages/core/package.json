@@ -1,0 +1,11 @@
+{
+  "name": "@my-ui/core",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./main.ts",
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {
+    "@emotion/css": "^11.9.0"
+  }
+}
