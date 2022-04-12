@@ -4,5 +4,6 @@
     "@": "./src"
   },
   "template": "react-component-library",
-  "stylesInjectType": "lazySingletonStyleTag"
+  "stylesInjectType": "lazySingletonStyleTag",
+  "repository": "monorepository"
 }

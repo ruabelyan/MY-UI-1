@@ -1,21 +1,23 @@
-/* eslint-disable react/default-props-match-prop-types */
-import { Direction } from '@/typization/types';
+import { themeStore } from '@my-ui/core';
 import { createContext, FC } from 'react';
 
-export interface MainContextValue {
-  direction: Direction;
-}
+// eslint-disable-next-line @typescript-eslint/no-empty-interface
+export interface MainContextValue {}
 
-const DEFAULT_VALUE: MainContextValue = {
-  direction: 'ltr',
-};
+const DEFAULT_VALUE: MainContextValue = {};
 
 export const MainContext = createContext<MainContextValue>(DEFAULT_VALUE);
 
 MainContext.displayName = 'MainContext';
 
-export const Provider: FC<MainContextValue> = ({ children, ...value }) => (
-  <MainContext.Provider value={value}>{children}</MainContext.Provider>
-);
+export const Provider: FC<MainContextValue> = ({ children, ...value }) => {
+  themeStore.updateValue({
+    colors: {
+      red: 'asdasd',
+    },
+  });
+
+  return <MainContext.Provider value={value}>{children}</MainContext.Provider>;
+};
 
 Provider.defaultProps = DEFAULT_VALUE;
