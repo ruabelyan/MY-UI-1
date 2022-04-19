@@ -1,5 +1,6 @@
 const path = require('path');
 const buildConfig = require('../build.config.json');
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
 
 module.exports = {
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -12,20 +13,14 @@ module.exports = {
     '@storybook/addon-viewport',
     '@storybook/addon-storysource',
     '@storybook/addon-a11y',
+    '@storybook/addon-backgrounds',
+    '@storybook/addon-knobs',
   ],
   framework: '@storybook/react',
   core: {
     builder: 'webpack5',
   },
-  typescript: {
-    reactDocgen: 'react-docgen',
-    reactDocgenTypescriptOptions: {
-      shouldExtractLiteralValuesFromEnum: true,
-      propFilter: prop =>
-        prop.parent ? !/node_modules/.test(prop.parent.fileName) : true,
-    },
-  },
-  webpackFinal: async (config, { configType }) => {
+  webpackFinal: async config => {
     config.resolve = {
       ...config.resolve,
       alias: Object.entries(buildConfig.alias).reduce(
@@ -36,6 +31,8 @@ module.exports = {
         {},
       ),
     };
+
+    config.plugins = [...config.plugins, new NodePolyfillPlugin()];
 
     return config;
   },

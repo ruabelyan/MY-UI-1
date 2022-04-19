@@ -1,11 +1,10 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { Provider } from '../src';
+import { ThemeProvider } from '../src';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
-      color: /(background|color)$/i,
       date: /Date$/,
     },
   },
@@ -16,8 +15,8 @@ export const parameters = {
 
 export const decorators = [
   Story => (
-    <Provider>
+    <ThemeProvider>
       <Story />
-    </Provider>
+    </ThemeProvider>
   ),
 ];
