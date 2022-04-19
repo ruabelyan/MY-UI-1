@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import * as Test from '@my-ui/core';
-console.log('🚀 ~ file: app.component.ts ~ line 3 ~ Test', Test);
 
 @Component({
   selector: 'app-root',
@@ -9,5 +7,4 @@ console.log('🚀 ~ file: app.component.ts ~ line 3 ~ Test', Test);
 })
 export class AppComponent {
   title = 'my-app';
-  buttonClassName = 'test';
 }
