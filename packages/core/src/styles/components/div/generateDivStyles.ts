@@ -4,12 +4,34 @@ import { coreLibsStore } from '@core/store';
 import { cx } from '@emotion/css';
 
 const generateDivStyles = (divProps: DivProps) => {
-  const coreLibs = coreLibsStore.getValue();
+  const { css } = coreLibsStore.getValue();
 
   return {
     Div: cx(
-      coreLibs.css`
+      css`
+        ${sharedStyles.generateAdditionalStyles(divProps)}
+
         ${sharedStyles.generateColorStyles(divProps)}
+
+        ${sharedStyles.generateBackgroundStyles(divProps)}
+
+        ${sharedStyles.generateBorderStyles(divProps)}
+
+        ${sharedStyles.generateDisplayStyles(divProps)}
+
+        ${sharedStyles.generateFontStyles(divProps)}
+
+        ${sharedStyles.generateRadiusStyles(divProps)}
+
+        ${sharedStyles.generateShadowStyles(divProps)}
+
+        ${sharedStyles.generateSizeStyles(divProps)}
+
+        ${sharedStyles.generateSpacingStyles(divProps)}
+
+        ${sharedStyles.generateTextStyles(divProps)}
+
+        ${sharedStyles.generateTransitionStyles(divProps)}
       `,
     ),
   };

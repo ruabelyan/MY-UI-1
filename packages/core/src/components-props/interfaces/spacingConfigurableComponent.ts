@@ -1,11 +1,15 @@
 import { ResponsiveValueType } from '../types';
 
+export type SpacingConfigObject = {
+  x?: ResponsiveValueType<string>;
+  y?: ResponsiveValueType<string>;
+  l?: ResponsiveValueType<string>;
+  r?: ResponsiveValueType<string>;
+  t?: ResponsiveValueType<string>;
+  b?: ResponsiveValueType<string>;
+};
 export interface SpacingConfigurableComponent {
-  margin?:
-    | ResponsiveValueType<string>
-    | { x?: ResponsiveValueType<string>; y?: ResponsiveValueType<string> };
+  margin?: ResponsiveValueType<string | SpacingConfigObject>;
 
-  padding?:
-    | ResponsiveValueType<string>
-    | { x?: ResponsiveValueType<string>; y?: ResponsiveValueType<string> };
+  padding?: ResponsiveValueType<string | SpacingConfigObject>;
 }

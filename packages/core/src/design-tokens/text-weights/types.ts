@@ -1,1 +1,1 @@
-export type TextWeightsThemeConfig = Record<string, string>;
+export type TextWeightsThemeConfig = Record<string, string | number>;

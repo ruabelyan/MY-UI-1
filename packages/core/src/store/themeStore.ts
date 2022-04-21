@@ -1,3 +1,4 @@
+import { generateCSSVariables } from '@core/styles/shared';
 import {
   colorsDefaultValues,
   ColorsThemeConfig,
@@ -48,6 +49,11 @@ const defaultConfig: ThemeConfigType = {
   presets: presetDefaultValues,
 };
 
-const themeStore = createStore<ThemeConfigType>(defaultConfig);
+generateCSSVariables(defaultConfig);
+
+const themeStore = createStore<ThemeConfigType>(
+  defaultConfig,
+  generateCSSVariables,
+);
 
 export default themeStore;

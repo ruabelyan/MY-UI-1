@@ -3,4 +3,5 @@ export type ResponsiveThemeConfig = {
   sm: string;
   md: string;
   lg: string;
+  xlg: string;
 };

@@ -5,7 +5,7 @@ export interface BorderConfigurableComponent {
   borderColor?: ColorType;
   hoverBorderColor?: ColorType;
 
-  border?: ResponsiveValueType<CSS.Properties['border']>;
+  borderStyle?: ResponsiveValueType<CSS.Properties['borderStyle']>;
   borderWidth?: ResponsiveValueType<CSS.Properties['borderWidth']>;
 }
 

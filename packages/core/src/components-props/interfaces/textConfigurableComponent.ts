@@ -5,7 +5,8 @@ export interface TextConfigurableComponent {
   textSize?: ResponsiveValueType<TextSizeType>;
   textWeight?: TextWeightType;
 
+  textAlign?: ResponsiveValueType<CSS.Properties['textAlign']>;
+  textStyle?: CSS.Properties['fontStyle'];
   textDecor?: CSS.Properties['textDecoration'];
   textTransform?: CSS.Properties['textTransform'];
-  textAlign?: CSS.Properties['textAlign'];
 }

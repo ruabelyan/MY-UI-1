@@ -6,7 +6,6 @@ export * from './colorConfigurableComponent';
 export * from './displayConfigurableComponent';
 export * from './dynamicComponent';
 export * from './fontConfigurableComponent';
-export * from './overflowConfigurableComponentProps';
 export * from './positionConfigurableComponent';
 export * from './radiusConfigurableComponent';
 export * from './shadowConfigurableComponent';
