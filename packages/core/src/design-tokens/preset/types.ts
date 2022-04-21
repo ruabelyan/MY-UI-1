@@ -1,1 +1,5 @@
-export type PresetThemeConfig = Record<string, object>;
+import { DivProps } from '@core/components-props';
+
+export type PresetThemeConfig = {
+  Div?: Record<string, DivProps>;
+};

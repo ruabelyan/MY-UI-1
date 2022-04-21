@@ -1,7 +1,7 @@
 import { PositionConfigurableComponent } from '@core/components-props';
 import { generateResponsiveValue } from '../responsive';
 
-const generatePositionStyles = ({
+const includePresetStyles = ({
   bottom,
   left,
   position,
@@ -40,4 +40,4 @@ const generatePositionStyles = ({
   })};
 `;
 
-export default generatePositionStyles;
+export default includePresetStyles;

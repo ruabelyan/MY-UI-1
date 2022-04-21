@@ -1,11 +1,5 @@
 import { PresetThemeConfig } from './types';
 
-const presetDefaultValues: PresetThemeConfig = {
-  button: {
-    xs: {
-      m: '10px',
-    },
-  },
-};
+const presetDefaultValues: PresetThemeConfig = {};
 
 export default presetDefaultValues;

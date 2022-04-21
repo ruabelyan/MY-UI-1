@@ -18,6 +18,7 @@
   "plugins": ["jsx-a11y", "react", "react-hooks", "prettier", "vue"],
   "extends": ["airbnb", "prettier", "plugin:vue/vue3-recommended"],
   "rules": {
+    "no-param-reassign": "off",
     "prettier/prettier": [
       "error",
       {

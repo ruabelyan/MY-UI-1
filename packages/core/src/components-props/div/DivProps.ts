@@ -7,6 +7,7 @@ import {
   DynamicComponent,
   FontConfigurableComponent,
   PositionConfigurableComponent,
+  PresetConfigurableComponent,
   RadiusConfigurableComponent,
   ShadowConfigurableComponent,
   SizeConfigurableComponent,
@@ -29,4 +30,5 @@ export default interface DivProps
     SpacingConfigurableComponent,
     TextConfigurableComponent,
     TransitionConfigurableComponent,
-    ColorConfigurableComponent {}
+    ColorConfigurableComponent,
+    PresetConfigurableComponent {}
