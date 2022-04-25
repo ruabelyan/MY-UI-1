@@ -6,6 +6,7 @@ import * as displayStyles from './display';
 import * as fontStyles from './font';
 import * as positionStyles from './position';
 import * as radiusStyles from './radius';
+import * as resetStyles from './reset';
 import * as shadowStyles from './shadow';
 import * as sizeStyles from './size';
 import * as spacingStyles from './spacing';
@@ -26,6 +27,7 @@ const sharedStyles = {
   ...spacingStyles,
   ...textStyles,
   ...transitionStyles,
+  ...resetStyles,
 };
 
 export default sharedStyles;
