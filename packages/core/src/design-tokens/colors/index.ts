@@ -1,2 +1,5 @@
-export { default as colorsDefaultValues } from './defaultValues';
+export {
+  default as colorsDefaultValues,
+  defaultColorNames,
+} from './defaultValues';
 export * from './types';

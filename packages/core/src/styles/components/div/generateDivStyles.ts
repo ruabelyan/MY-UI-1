@@ -1,17 +1,27 @@
 import { DivProps } from '@core/components-props';
 import { sharedStyles } from '@core/index';
+import { deepMergeFlatten } from '@core/shared';
 import { coreLibsStore } from '@core/store';
 import { includePresetStyles } from '@core/styles/shared';
 import { cx } from '@emotion/css';
+import getDivDefaultProps from './getDivDefaultProps';
 
 const generateDivStyles = (divProps: DivProps) => {
   const { css } = coreLibsStore.getValue();
 
+  const divDefaultProps = getDivDefaultProps();
+
   divProps = includePresetStyles({
     componentName: 'Div',
-    presets: divProps.presets,
+    presets:
+      divProps.presets !== undefined
+        ? divProps.presets
+        : divDefaultProps.presets,
     props: divProps,
   });
+
+  if (divProps.disableDefaultStyles)
+    divProps = deepMergeFlatten(divDefaultProps, divProps);
 
   return {
     Div: cx(

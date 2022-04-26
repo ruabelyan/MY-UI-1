@@ -5,4 +5,5 @@ export interface AdditionalComponentProps {
   opacity?: CSS.Properties['opacity'];
   overflow?: CSS.Properties['overflow'];
   className?: string;
+  disableDefaultStyles?: boolean;
 }

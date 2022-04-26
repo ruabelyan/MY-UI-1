@@ -122,6 +122,25 @@ const colorsDefaultValues: ColorsThemeConfig = {
   black200: '#9A9A9A',
   black100: '#D2D2D2',
   black50: '#ffffff',
+  // White
+  white: '#ffffff',
+  // CSS colors
+  transparent: 'transparent',
 };
+
+export const defaultColorNames = [
+  'primary',
+  'gray',
+  'error',
+  'warning',
+  'success',
+  'fuschia',
+  'blue',
+  'purple',
+  'indigo',
+  'orange',
+  'black',
+  'white',
+] as const;
 
 export default colorsDefaultValues;

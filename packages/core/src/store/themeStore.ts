@@ -34,6 +34,7 @@ export type ThemeConfigType = {
   responsive: ResponsiveThemeConfig;
   transition: TransitionThemeConfig;
   presets: PresetThemeConfig;
+  remSize: number;
 };
 
 const defaultConfig: ThemeConfigType = {
@@ -47,6 +48,7 @@ const defaultConfig: ThemeConfigType = {
   responsive: responsiveDefaultValues,
   transition: transitionDefaultValues,
   presets: presetDefaultValues,
+  remSize: 16,
 };
 
 generateCSSVariables(defaultConfig);

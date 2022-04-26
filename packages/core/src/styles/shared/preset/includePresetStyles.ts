@@ -27,6 +27,10 @@ const includePresetStyles = <T extends keyof PresetThemeConfig>({
       : acc;
   }, {});
 
+  console.log(
+    '🚀 ~ file: includePresetStyles.ts ~ line 31 ~ presetProps',
+    presetProps,
+  );
   return {
     ...presetProps,
     ...props,
