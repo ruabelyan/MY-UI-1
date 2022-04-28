@@ -10,11 +10,7 @@ export default {
 } as ComponentMeta<typeof Button>;
 
 const Template: ComponentStory<typeof Div> = args => (
-  <>
-    {/* <Button {...args} /> */}
-
-    <Button presets={['primary', 'xs']}>Button</Button>
-  </>
+  <Button {...args}>Button</Button>
 );
 
 export const Default = Template.bind({});

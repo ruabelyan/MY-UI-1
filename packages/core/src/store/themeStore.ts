@@ -35,9 +35,11 @@ export type ThemeConfigType = {
   transition: TransitionThemeConfig;
   presets: PresetThemeConfig;
   remSize: number;
+  shouldGenerateCSSVariables?: boolean;
+  CSSVariablesPrefix?: string;
 };
 
-const defaultConfig: ThemeConfigType = {
+export const defaultThemeConfig: ThemeConfigType = {
   textSizes: textSizesDefaultValues,
   fonts: fontsDefaultValues,
   textWeights: textWeightsDefaultValues,
@@ -49,13 +51,12 @@ const defaultConfig: ThemeConfigType = {
   transition: transitionDefaultValues,
   presets: presetDefaultValues,
   remSize: 16,
+  shouldGenerateCSSVariables: true,
 };
 
-generateCSSVariables(defaultConfig);
+export const getThemeStore = () =>
+  createStore<ThemeConfigType>(defaultThemeConfig, generateCSSVariables);
 
-const themeStore = createStore<ThemeConfigType>(
-  defaultConfig,
-  generateCSSVariables,
-);
+const themeStore = getThemeStore();
 
 export default themeStore;

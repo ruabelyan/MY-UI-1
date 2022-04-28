@@ -1,7 +1,7 @@
 import { FontsThemeConfig } from './types';
 
 const fontsDefaultValues: FontsThemeConfig = {
-  default: 'Roboto, sans-serif',
+  default: 'Mulish, sans-serif',
 };
 
 export default fontsDefaultValues;

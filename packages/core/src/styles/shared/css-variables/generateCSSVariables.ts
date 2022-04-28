@@ -4,7 +4,9 @@ import { CSS_VARIABLE_THEMES } from './constants';
 const generateCSSVariablesForTheme = ({
   theme,
   themeName,
+  CSSVariablesPrefix,
 }: {
+  CSSVariablesPrefix?: string;
   themeName: string;
   theme: Record<string, string | number>;
 }) => `
@@ -12,50 +14,63 @@ const generateCSSVariablesForTheme = ({
       (prevVariables, [colorKey, colorValue]) => `
           ${prevVariables}
           
-          --my-ui-${themeName}--${colorKey}: ${colorValue};
+          --my-ui-${
+            CSSVariablesPrefix || ''
+          }${themeName}--${colorKey}: ${colorValue};
         `,
       '',
     )}
     `;
 
-const generateCSSVariables = (themeConfig: ThemeConfigType) => {
+const generateCSSVariables = (themeConfig: ThemeConfigType): void => {
   const { injectGlobal } = coreLibsStore.getValue();
+  const { shouldGenerateCSSVariables, CSSVariablesPrefix } = themeConfig;
 
-  return injectGlobal`
+  if (!shouldGenerateCSSVariables) return;
+
+  // eslint-disable-next-line no-unused-expressions
+  injectGlobal`
     :root {
         ${generateCSSVariablesForTheme({
           theme: themeConfig.colors,
           themeName: CSS_VARIABLE_THEMES.color,
+          CSSVariablesPrefix,
         })}
 
         ${generateCSSVariablesForTheme({
           theme: themeConfig.fonts,
           themeName: CSS_VARIABLE_THEMES.font,
+          CSSVariablesPrefix,
         })}
 
         ${generateCSSVariablesForTheme({
           theme: themeConfig.radius,
           themeName: CSS_VARIABLE_THEMES.radius,
+          CSSVariablesPrefix,
         })}
 
         ${generateCSSVariablesForTheme({
           theme: themeConfig.shadow,
           themeName: CSS_VARIABLE_THEMES.shadow,
+          CSSVariablesPrefix,
         })}
 
         ${generateCSSVariablesForTheme({
           theme: themeConfig.textSizes,
           themeName: CSS_VARIABLE_THEMES.textSize,
+          CSSVariablesPrefix,
         })}
 
         ${generateCSSVariablesForTheme({
           theme: themeConfig.textWeights,
           themeName: CSS_VARIABLE_THEMES.textWeight,
+          CSSVariablesPrefix,
         })}
 
         ${generateCSSVariablesForTheme({
           theme: themeConfig.transition,
           themeName: CSS_VARIABLE_THEMES.transition,
+          CSSVariablesPrefix,
         })}
     }
   `;

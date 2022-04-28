@@ -1,5 +1,5 @@
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
-import { StyleReset, ThemeProvider } from '../src';
+import { GlobalStyles, StyleReset, ThemeProvider } from '../src';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -20,6 +20,7 @@ export const decorators = [
         remSize: 16,
       }}
     >
+      <GlobalStyles />
       <StyleReset />
 
       <Story />

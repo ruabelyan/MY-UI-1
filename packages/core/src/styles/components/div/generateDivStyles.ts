@@ -3,11 +3,10 @@ import { sharedStyles } from '@core/index';
 import { deepMergeFlatten } from '@core/shared';
 import { coreLibsStore } from '@core/store';
 import { includePresetStyles } from '@core/styles/shared';
-import { cx } from '@emotion/css';
 import getDivDefaultProps from './getDivDefaultProps';
 
 const generateDivStyles = (divProps: DivProps) => {
-  const { css } = coreLibsStore.getValue();
+  const { css, cx } = coreLibsStore.getValue();
 
   const divDefaultProps = getDivDefaultProps();
 

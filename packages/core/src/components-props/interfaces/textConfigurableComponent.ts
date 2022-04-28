@@ -9,4 +9,6 @@ export interface TextConfigurableComponent {
   textStyle?: CSS.Properties['fontStyle'];
   textDecor?: CSS.Properties['textDecoration'];
   textTransform?: CSS.Properties['textTransform'];
+  lineHeight?: CSS.Properties['lineHeight'];
+  letterSpacing?: CSS.Properties['letterSpacing'];
 }

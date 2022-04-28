@@ -12,7 +12,12 @@ const includePresetStyles = <T extends keyof PresetThemeConfig>({
 }) => {
   const { presets: presetsTheme } = themeStore.getValue();
 
-  if (!presets || !presetsTheme[componentName]) return props;
+  if (
+    !presets ||
+    !presetsTheme[componentName] ||
+    (typeof presets !== 'string' && !Array.isArray(presets))
+  )
+    return props;
 
   const presetProps = (
     typeof presets === 'string' ? [presets] : presets
@@ -27,10 +32,6 @@ const includePresetStyles = <T extends keyof PresetThemeConfig>({
       : acc;
   }, {});
 
-  console.log(
-    '🚀 ~ file: includePresetStyles.ts ~ line 31 ~ presetProps',
-    presetProps,
-  );
   return {
     ...presetProps,
     ...props,

@@ -1,7 +1,6 @@
 import { ThemeContext } from '@/index';
 import { typedMemo } from '@/shared/helpers';
-import { ButtonProps } from '@core/components-props';
-import { componentStyles } from '@my-ui/core';
+import { ButtonProps, componentStyles } from '@my-ui/core';
 import cx from 'classnames';
 import React, { FC, useContext } from 'react';
 

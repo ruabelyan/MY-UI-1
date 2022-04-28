@@ -4,6 +4,7 @@ import * as borderStyles from './border';
 import * as colorStyles from './color';
 import * as displayStyles from './display';
 import * as fontStyles from './font';
+import * as globalStyles from './global';
 import * as positionStyles from './position';
 import * as radiusStyles from './radius';
 import * as resetStyles from './reset';
@@ -28,9 +29,11 @@ const sharedStyles = {
   ...textStyles,
   ...transitionStyles,
   ...resetStyles,
+  ...globalStyles,
 };
 
 export default sharedStyles;
 
 export * from './css-variables';
+export * from './global';
 export * from './preset';

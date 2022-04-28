@@ -21,6 +21,8 @@ const createStore = <T>(
         onValueChange?.(value);
       }
     },
+    getUpdatedValue: (updatedValue: Partial<T>) =>
+      deepMergeFlatten(value, updatedValue),
   };
 };
 
