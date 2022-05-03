@@ -7,12 +7,15 @@ import {
 import { generateResponsiveValue } from '../responsive';
 
 const generateTextStyles = ({
+  typography,
   textAlign,
   textDecor,
   textSize,
   textStyle,
   textTransform,
   textWeight,
+  letterSpacing,
+  lineHeight,
 }: TextConfigurableComponent) => {
   const { textSizes, textWeights } = themeStore.getValue();
 
@@ -21,13 +24,6 @@ const generateTextStyles = ({
       propertyName: 'text-align',
       responsiveValue: textAlign,
     })};
-
-    ${
-      textDecor &&
-      `
-        text-decoration: ${textDecor};
-      `
-    };
 
     ${generateResponsiveValue({
       responsiveValue: textSize,
@@ -38,13 +34,41 @@ const generateTextStyles = ({
           themeName: CSS_VARIABLE_THEMES.textSize,
           propertyValue: value && textSizes[value],
         })};
-        `,
+      `,
     })};
+
+    ${
+      textDecor &&
+      `
+        text-decoration: ${textDecor};
+      `
+    };
 
     ${
       textStyle &&
       `
         font-style: ${textStyle};
+      `
+    };
+
+    ${
+      letterSpacing &&
+      `
+        letter-spacing: ${letterSpacing};
+      `
+    };
+
+    ${
+      letterSpacing &&
+      `
+        letter-spacing: ${letterSpacing};
+      `
+    };
+
+    ${
+      lineHeight &&
+      `
+        line-height: ${lineHeight};
       `
     };
 

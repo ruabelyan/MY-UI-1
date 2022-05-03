@@ -1,7 +1,7 @@
 import { TextWeightsThemeConfig } from './types';
 
 const textWeightsDefaultValues: TextWeightsThemeConfig = {
-  title: 700,
+  bold: 700,
 };
 
 export default textWeightsDefaultValues;

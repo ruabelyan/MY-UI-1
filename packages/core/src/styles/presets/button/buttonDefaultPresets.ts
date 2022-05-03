@@ -1,5 +1,6 @@
 import { ButtonProps } from '@core/components-props';
 import { defaultColorNames, getColorKey } from '@core/design-tokens';
+import { calculateRem } from '@core/shared';
 
 const buttonDefaultPresets: Record<string, ButtonProps> = {
   ...defaultColorNames.reduce(
@@ -25,6 +26,11 @@ const buttonDefaultPresets: Record<string, ButtonProps> = {
     }),
     {},
   ),
+  sm: {
+    minWidth: calculateRem(50),
+    minHeight: calculateRem(20),
+    padding: { x: calculateRem(10) },
+  },
 };
 
 export default buttonDefaultPresets;
