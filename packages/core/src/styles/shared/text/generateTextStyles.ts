@@ -7,19 +7,44 @@ import {
 import { generateResponsiveValue } from '../responsive';
 
 const generateTextStyles = ({
-  typography,
-  textAlign,
-  textDecor,
-  textSize,
-  textStyle,
-  textTransform,
-  textWeight,
-  letterSpacing,
-  lineHeight,
+  typography: typographyProp,
+  ...ovverrideProps
 }: TextConfigurableComponent) => {
-  const { textSizes, textWeights } = themeStore.getValue();
+  const { textSizes, textWeights, typography, fonts } = themeStore.getValue();
+
+  if (typographyProp && typography[typographyProp])
+    ovverrideProps = {
+      ...typography[typographyProp],
+      ...ovverrideProps,
+    };
+
+  const {
+    textAlign,
+    textDecor,
+    textSize,
+    textStyle,
+    textTransform,
+    textWeight,
+    letterSpacing,
+    lineHeight,
+    fontFamily,
+  } = ovverrideProps;
 
   return `
+    ${generateStylesWithCSSVariable({
+      propertyName: 'font-family',
+      propertyKey: fontFamily,
+      themeName: CSS_VARIABLE_THEMES.font,
+      propertyValue: fontFamily && fonts[fontFamily],
+    })};
+
+    ${generateStylesWithCSSVariable({
+      propertyName: 'font-weight',
+      propertyKey: textWeight,
+      themeName: CSS_VARIABLE_THEMES.textWeight,
+      propertyValue: textWeight && textWeights[textWeight],
+    })};
+
     ${generateResponsiveValue({
       propertyName: 'text-align',
       responsiveValue: textAlign,
@@ -59,13 +84,6 @@ const generateTextStyles = ({
     };
 
     ${
-      letterSpacing &&
-      `
-        letter-spacing: ${letterSpacing};
-      `
-    };
-
-    ${
       lineHeight &&
       `
         line-height: ${lineHeight};
@@ -78,13 +96,6 @@ const generateTextStyles = ({
         text-transform: ${textTransform};
       `
     };
-
-    ${generateStylesWithCSSVariable({
-      propertyName: 'font-weight',
-      propertyKey: textWeight,
-      themeName: CSS_VARIABLE_THEMES.textWeight,
-      propertyValue: textWeight && textWeights[textWeight],
-    })};
   `;
 };
 

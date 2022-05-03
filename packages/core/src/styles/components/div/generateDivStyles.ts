@@ -35,8 +35,6 @@ const generateDivStyles = (divProps: DivProps) => {
 
         ${sharedStyles.generateDisplayStyles(divProps)}
 
-        ${sharedStyles.generateFontStyles(divProps)}
-
         ${sharedStyles.generateRadiusStyles(divProps)}
 
         ${sharedStyles.generateShadowStyles(divProps)}

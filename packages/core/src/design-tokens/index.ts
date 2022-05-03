@@ -8,3 +8,4 @@ export * from './shadows';
 export * from './text-sizes';
 export * from './text-weights';
 export * from './transition';
+export * from './typography';

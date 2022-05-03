@@ -20,6 +20,8 @@ import {
   TextWeightsThemeConfig,
   transitionDefaultValues,
   TransitionThemeConfig,
+  typographyDefaultValues,
+  TypographyThemeConfig,
 } from '../design-tokens';
 import { createStore } from '../shared';
 
@@ -27,6 +29,7 @@ export type ThemeConfigType = {
   fonts: FontsThemeConfig;
   textSizes: TextSizesThemeConfig;
   textWeights: TextWeightsThemeConfig;
+  typography: TypographyThemeConfig;
   colors: ColorsThemeConfig;
   radius: RadiusThemeConfig;
   shadow: ShadowThemeConfig;
@@ -43,6 +46,7 @@ export const defaultThemeConfig: ThemeConfigType = {
   textSizes: textSizesDefaultValues,
   fonts: fontsDefaultValues,
   textWeights: textWeightsDefaultValues,
+  typography: typographyDefaultValues,
   colors: colorsDefaultValues,
   radius: radiusDefaultValues,
   shadow: shadowDefaultValues,

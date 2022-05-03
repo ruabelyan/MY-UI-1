@@ -2,7 +2,11 @@ import { ButtonProps } from '@core/components-props';
 import { sharedStyles } from '@core/index';
 import { deepMergeFlatten } from '@core/shared';
 import { coreLibsStore, themeStore } from '@core/store';
-import { includePresetStyles } from '@core/styles/shared';
+import {
+  CSS_VARIABLE_THEMES,
+  generateStylesWithCSSVariable,
+  includePresetStyles,
+} from '@core/styles/shared';
 import getButtonDefaultProps from './getButtonDefaultProps';
 
 const generateButtonStyles = (buttonProps: ButtonProps) => {
@@ -38,8 +42,6 @@ const generateButtonStyles = (buttonProps: ButtonProps) => {
 
         ${sharedStyles.generateDisplayStyles(buttonProps)}
 
-        ${sharedStyles.generateFontStyles(buttonProps)}
-
         ${sharedStyles.generateRadiusStyles(buttonProps)}
 
         ${sharedStyles.generateShadowStyles(buttonProps)}
@@ -53,13 +55,19 @@ const generateButtonStyles = (buttonProps: ButtonProps) => {
         ${sharedStyles.generateTransitionStyles(buttonProps)}
 
         &:disabled {
-          ${disabledColor &&
-          colors[disabledColor] &&
-          `color: ${colors[disabledColor]}`};
+          ${generateStylesWithCSSVariable({
+            propertyName: 'color',
+            propertyKey: disabledColor,
+            themeName: CSS_VARIABLE_THEMES.color,
+            propertyValue: disabledColor && colors[disabledColor],
+          })}
 
-          ${disabledBg &&
-          colors[disabledBg] &&
-          `background-color: ${colors[disabledBg]}`};
+          ${generateStylesWithCSSVariable({
+            propertyName: 'background-color',
+            propertyKey: disabledBg,
+            themeName: CSS_VARIABLE_THEMES.color,
+            propertyValue: disabledBg && colors[disabledBg],
+          })}
         }
       `,
     ),

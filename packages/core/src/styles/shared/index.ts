@@ -3,7 +3,6 @@ import * as backgroundStyles from './background';
 import * as borderStyles from './border';
 import * as colorStyles from './color';
 import * as displayStyles from './display';
-import * as fontStyles from './font';
 import * as globalStyles from './global';
 import * as positionStyles from './position';
 import * as radiusStyles from './radius';
@@ -20,7 +19,6 @@ const sharedStyles = {
   ...backgroundStyles,
   ...borderStyles,
   ...displayStyles,
-  ...fontStyles,
   ...positionStyles,
   ...radiusStyles,
   ...shadowStyles,

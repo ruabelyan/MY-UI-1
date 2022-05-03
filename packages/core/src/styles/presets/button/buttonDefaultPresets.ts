@@ -10,6 +10,7 @@ const buttonDefaultPresets: Record<string, ButtonProps> = {
         bg: getColorKey(color, 300),
         hoverBg: getColorKey(color, 400),
         focusBg: getColorKey(color, 500),
+        disabledBg: getColorKey(color, 100),
       },
       [`outlined-${color}`]: {
         borderColor: getColorKey(color, 300),

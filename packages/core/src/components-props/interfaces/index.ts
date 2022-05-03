@@ -5,7 +5,6 @@ export * from './borderConfigurableComponent';
 export * from './colorConfigurableComponent';
 export * from './displayConfigurableComponent';
 export * from './dynamicComponent';
-export * from './fontConfigurableComponent';
 export * from './positionConfigurableComponent';
 export * from './presetConfigurableComponent';
 export * from './radiusConfigurableComponent';

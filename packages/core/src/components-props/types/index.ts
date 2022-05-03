@@ -4,3 +4,4 @@ export * from './responsiveValueType';
 export * from './shadow';
 export * from './textSize';
 export * from './textWeight';
+export * from './typography';
