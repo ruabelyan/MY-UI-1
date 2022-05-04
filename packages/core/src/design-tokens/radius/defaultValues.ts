@@ -7,6 +7,7 @@ const radiusDefaultValues: RadiusThemeConfig = {
   lg: '16px',
   xl: '20px',
   circle: '50%',
+  none: '0',
 };
 
 export default radiusDefaultValues;

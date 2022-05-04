@@ -1,6 +1,5 @@
 /* eslint-disable import/no-extraneous-dependencies */
 import { Button } from '@/components/button';
-import { Div } from '@/index';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import { TITLES } from '../configs';
 
@@ -9,7 +8,7 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-const Template: ComponentStory<typeof Div> = args => (
+const Template: ComponentStory<typeof Button> = args => (
   <Button {...args}>Button</Button>
 );
 

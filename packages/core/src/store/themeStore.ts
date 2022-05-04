@@ -14,6 +14,8 @@ import {
   ResponsiveThemeConfig,
   shadowDefaultValues,
   ShadowThemeConfig,
+  spacingDefaultValues,
+  SpacingThemeConfig,
   textSizesDefaultValues,
   TextSizesThemeConfig,
   textWeightsDefaultValues,
@@ -37,6 +39,7 @@ export type ThemeConfigType = {
   responsive: ResponsiveThemeConfig;
   transition: TransitionThemeConfig;
   presets: PresetThemeConfig;
+  spacing: Partial<SpacingThemeConfig>;
   remSize: number;
   shouldGenerateCSSVariables?: boolean;
   CSSVariablesPrefix?: string;
@@ -56,6 +59,7 @@ export const defaultThemeConfig: ThemeConfigType = {
   presets: presetDefaultValues,
   remSize: 16,
   shouldGenerateCSSVariables: true,
+  spacing: spacingDefaultValues,
 };
 
 export const getThemeStore = () =>
