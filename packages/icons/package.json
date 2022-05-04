@@ -1,0 +1,9 @@
+{
+  "name": "@my-ui/icons",
+  "version": "0.1.0",
+  "private": true,
+  "main": "./index.ts",
+  "scripts": {},
+  "devDependencies": {},
+  "dependencies": {}
+}
